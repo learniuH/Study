@@ -5,7 +5,7 @@ b = 'abc'
 # type 可以判断一个对象的类型, 并且 type 也可以用于创建类
 print(type(a))  # <class 'int'>
 
-# 一切皆对象, 对象是由类创建出来的
+# 1、一切皆对象, 对象是由类创建出来的
 print(type(int))    # <class 'type'>
 
 '''
