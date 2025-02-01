@@ -143,7 +143,41 @@ file_name, _ = QFileDialog.getOpenFileName(
 
 
 
-## TableWidget
+## QComboBox
+
+ `QComboBox`                                                                                                                         未下拉时的样式
+
+ `QComboBox::drop-down`                                                                                                  下拉箭头（含外框）
+
+ `QComboBox::down-arrow`                                                                                                下拉箭头（仅含箭头）
+
+ `QComboBox::drop-down:hover`                                                                                      下拉箭头悬浮状态
+
+ `QComboBox QAbstractItemView`                                                                                    弹出列表
+
+ `QComboBox QAbstractItemView::item`                                                                       下拉列表的单个项目
+
+ `QComboBox QAbstractItemView::item:selected`                                                    下拉列表的选中项
+
+ `QComboBOx QAbstractScrollArea QScrollBar:vertical`                                      垂直滚动条
+
+`QComboBox QAbstractScrollArea QScrollBar::handle:vertical`                       垂直滚动条滑块
+
+
+
+```python
+QComboBox QAbstractItemView {
+    selection-bakcground-color: #4a4a4a;	/* 选中项的背景颜色*/
+    selection-color: #fff;	/* 选中项的字体颜色 */
+    outline: none;
+}
+```
+
+
+
+
+
+## QTableWidget
 
 > QTabelWidget                                                                 外框
 >
