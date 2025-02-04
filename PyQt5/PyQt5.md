@@ -2,6 +2,63 @@
 
 
 
+## QTableWidget
+
+### 1. 基础设置
+
+| 方法                                  | 作用             | 示例                                                     |
+| :------------------------------------ | :--------------- | :------------------------------------------------------- |
+| **`setRowCount(int rows)`**           | 设置表格行数     | `table.setRowCount(10)`                                  |
+| **`setColumnCount(int cols)`**        | 设置表格列数     | `table.setColumnCount(5)`                                |
+| **`setHorizontalHeaderLabels(list)`** | 设置水平表头标签 | `table.setHorizontalHeaderLabels(["ID", "Name", "Age"])` |
+| **`setVerticalHeaderLabels(list)`**   | 设置垂直表头标签 | `table.setVerticalHeaderLabels(["Row1", "Row2"])`        |
+| **`horizontalHeader()`**              | 获取水平表头对象 | `header = table.horizontalHeader()`                      |
+| **`verticalHeader()`**                | 获取垂直表头对象 | `header = table.verticalHeader()`                        |
+
+### 2. 数据操作
+
+| 方法                                              | 作用                         | 示例                                            |
+| :------------------------------------------------ | :--------------------------- | :---------------------------------------------- |
+| **`setItem(int row, int col, QTableWidgetItem)`** | 设置单元格数据               | `table.setItem(0, 0, QTableWidgetItem("Data"))` |
+| **`item(int row, int col)`**                      | 获取单元格对象               | `item = table.item(0, 0)`                       |
+| **`takeItem(int row, int col)`**                  | 移除单元格内容               | `table.takeItem(0, 0)`                          |
+| **`clear()`**                                     | 清空所有内容（保留行列数）   | `table.clear()`                                 |
+| **`clearContents()`**                             | 清空数据（保留行列数和表头） | `table.clearContents()`                         |
+| **`insertRow(int row)`**                          | 插入行                       | `table.insertRow(2)`                            |
+| **`insertColumn(int col)`**                       | 插入列                       | `table.insertColumn(3)`                         |
+| **`removeRow(int row)`**                          | 删除行                       | `table.removeRow(1)`                            |
+| **`removeColumn(int col)`**                       | 删除列                       | `table.removeColumn(0)`                         |
+
+### 3. 外观控制
+
+| 方法                                     | 作用                 | 示例                                                         |
+| :--------------------------------------- | :------------------- | :----------------------------------------------------------- |
+| **`setColumnWidth(int col, int width)`** | 设置列宽             | `table.setColumnWidth(0, 100)`                               |
+| **`setRowHeight(int row, int height)`**  | 设置行高             | `table.setRowHeight(0, 30)`                                  |
+| **`resizeColumnsToContents()`**          | 根据内容自动调整列宽 | `table.resizeColumnsToContents()`                            |
+| **`resizeRowsToContents()`**             | 根据内容自动调整行高 | `table.resizeRowsToContents()`                               |
+| **`setEditTriggers(EditTriggers)`**      | 设置单元格编辑条件   | `table.setEditTriggers(QTableWidget.NoEditTriggers)`         |
+| **`setSelectionMode(SelectionMode)`**    | 设置选择模式         | `table.setSelectionMode(QTableWidget.SingleSelection)`       |
+| **`setStyleSheet(str)`**                 | 设置 CSS 样式        | `table.setStyleSheet("QTableWidget {background: #f0f0f0;}")` |
+
+### 4. 信号与事件
+
+| 信号                                | 触发条件             | 槽函数示例                                                |
+| :---------------------------------- | :------------------- | :-------------------------------------------------------- |
+| **`cellClicked(int row, int col)`** | 点击单元格时触发     | `def on_click(row, col): print(f"Clicked {row}, {col}")`  |
+| **`cellChanged(int row, int col)`** | 单元格内容修改后触发 | `def on_change(row, col): print(f"Changed {row}, {col}")` |
+| **`itemSelectionChanged()`**        | 选中项变化时触发     | `def on_selection_change(): print("Selection changed")`   |
+
+### 5. 高级功能
+
+| 方法                                                      | 作用               | 示例                                                |
+| :-------------------------------------------------------- | :----------------- | :-------------------------------------------------- |
+| **`sortItems(int col, SortOrder order)`**                 | 按指定列排序       | `table.sortItems(0, Qt.AscendingOrder)`             |
+| **`findItems(str, Qt.MatchFlags)`**                       | 查找匹配的单元格   | `items = table.findItems("Alice", Qt.MatchExactly)` |
+| **`setSpan(int row, int col, int rowSpan, int colSpan)`** | 合并单元格         | `table.setSpan(0, 0, 2, 2)`                         |
+| **`setCellWidget(int row, int col, QWidget)`**            | 在单元格中添加控件 | `table.setCellWidget(0, 0, QPushButton("Click"))`   |
+| **`cellWidget(int row, int col)`**                        | 获取单元格中的控件 | `btn = table.cellWidget(0, 0)`                      |
+
 
 
 ## QFileDialog
